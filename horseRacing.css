@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: Arial, 'Microsoft YaHei';
+}
+img {
+  vertical-align: top;
+  border: none;
+}
+input,
+textarea {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-appearance: none;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  border: 1px solid;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+a {
+  text-decoration: none;
+  -webkit-touch-callout: none;
+}
+em,
+i {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  font-size: 10px;
+}
+.cms_page-horseRacing .tab_content {
+  position: relative;
+  height: 45px;
+}
+.cms_page-horseRacing .tab_content.fix_top .tab_vertical {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.cms_page-horseRacing .tab_content.fix_top .tab_horizontal {
+  position: fixed;
+  top: 45px;
+  left: 0;
+}
+.cms_page-horseRacing .tab_content .tab_vertical {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px #ff3c3c solid;
+  background-color: #f5f5f5;
+  z-index: 8;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .tab_list {
+  position: relative;
+  height: 44px;
+  margin: 0 12% 0 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .tab_list .tab {
+  position: relative;
+  display: inline-block;
+  width: 22%;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 1%;
+  font-size: 1.4rem;
+  color: #212121;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .tab_list .tab.active {
+  color: #ff3c3c;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .tab_list .tab.active:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 2px #ff3c3c solid;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 12%;
+  height: 44px;
+  background-color: #f5f5f5;
+}
+.cms_page-horseRacing .tab_content .tab_vertical .arrow.rotate .icon-down_arrow {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.cms_page-horseRacing .tab_content .tab_vertical .arrow .icon-down_arrow {
+  display: block;
+  width: 30px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 3rem;
+  text-align: left;
+  color: #ff3c3c;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.cms_page-horseRacing .tab_content .tab_horizontal {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0);
+}
+.cms_page-horseRacing .tab_content .tab_horizontal .tab_list {
+  padding-top: 10px;
+  background-color: #fff;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.cms_page-horseRacing .tab_content .tab_horizontal .tab_list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cms_page-horseRacing .tab_content .tab_horizontal .tab_list.show {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+.cms_page-horseRacing .tab_content .tab_horizontal .tab_list .tab {
+  float: left;
+  width: 17%;
+  height: 22px;
+  line-height: 22px;
+  margin: 0 4% 10px;
+  font-size: 1.2rem;
+  color: #212121;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cms_page-horseRacing .tab_content .tab_horizontal .tab_list .tab.active {
+  color: #fff;
+  background-color: #ff3c3c;
+}
+.cms_page-horseRacing .goods_lists:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cms_page-horseRacing .goods_lists .items {
+  position: relative;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cms_page-horseRacing .goods_lists .items:nth-child(2n):after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid #e0e0e0;
+}
+.cms_page-horseRacing .goods_lists .items .box_img {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.cms_page-horseRacing .goods_lists .items .box_img:after {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+.cms_page-horseRacing .goods_lists .items .box_img img.pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cms_page-horseRacing .goods_lists .items .box_img span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+}
+.cms_page-horseRacing .goods_lists .items .box_img span img {
+  width: 35px;
+  height: 35px;
+}
+.cms_page-horseRacing .goods_lists .items .box_title {
+  margin-top: 8px;
+  height: 38px;
+  line-height: 19px;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+.cms_page-horseRacing .goods_lists .items .box_title a {
+  color: #333;
+}
+.cms_page-horseRacing .goods_lists .items .box_price {
+  margin-top: 12px;
+  height: 18px;
+  line-height: 18px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .now_price {
+  width: 70px;
+  font-size: 1.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .now_price span {
+  margin-left: 3px;
+  font-size: 1.7rem;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .now_price em {
+  font-size: 1.2rem;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .ref_price {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .ref_price span {
+  display: inline-block;
+  width: 36px;
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid #bdbdbd;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}
+.cms_page-horseRacing .goods_lists .items .box_price .ref_price em {
+  font-size: 1.2rem;
+  color: #999;
+}
+.cms_page-horseRacing .goods_lists .items .box_activity {
+  display: block;
+  margin-top: 6px;
+  height: 14px;
+  line-height: 14px;
+  color: #ff5454;
+  text-decoration: underline;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cms_page-horseRacing .goods_lists .items .box_btn {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  font-size: 1.4rem;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.cms_page-horseRacing .goods_lists .items .box_btn.add_cart {
+  border: 1px solid #ff3c3c;
+  color: #fff;
+  background: #ff3c3c;
+}
+.cms_page-horseRacing .goods_lists .items .box_btn.sold_out {
+  border: 1px solid #ddd;
+  color: #aaa;
+  background: #eee;
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>horseRacing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="horseRacing.css">
+    <link rel="stylesheet" type="text/css" href="http://192.168.116.65:3000/projects/public/iconfonts/style.css">
+    <script src="require.js"></script>
+    <!-- <script src="ejs.js"></script>
+    <script src="zepto.min.js"></script> -->
+</head>
+
+<body>
+    <div class="cms_page-horseRacing">
+        <div class="tab_content">
+            <div class="tab_vertical">
+                <div class="tab_list">
+                    <a href="javascript:;" class="tab active ">女装饰品</a>
+                    <a href="javascript:;" class="tab">家纺家装</a>
+                    <a href="javascript:;" class="tab">食品百货</a>
+                    <a href="javascript:;" class="tab">大牌男装</a>
+                    <a href="javascript:;" class="tab">大小家电</a>
+                    <a href="javascript:;" class="tab">手机数码</a>
+                    <a href="javascript:;" class="tab">户外运动</a>
+                    <a href="javascript:;" class="tab">鞋靴箱包</a>
+                    <a href="javascript:;" class="tab">母婴玩具</a>
+                    <a href="javascript:;" class="tab">童装童鞋</a>
+                    <a href="javascript:;" class="tab">护肤彩妆</a>
+                    <a href="javascript:;" class="tab">内衣配件</a>
+                    <a href="javascript:;" class="tab">进口食品</a>
+                    <a href="javascript:;" class="tab">酒水饮料</a>
+                </div>
+                <div class="arrow">
+                    <div class="icon icon-down_arrow"></div>
+                </div>
+            </div>
+            <div class="tab_horizontal">
+                <div class="tab_list">
+                    <a href="javascript:;" class="tab active ">女装饰品</a>
+                    <a href="javascript:;" class="tab">家纺家装</a>
+                    <a href="javascript:;" class="tab">食品百货</a>
+                    <a href="javascript:;" class="tab">大牌男装</a>
+                    <a href="javascript:;" class="tab">大小家电</a>
+                    <a href="javascript:;" class="tab">手机数码</a>
+                    <a href="javascript:;" class="tab">户外运动</a>
+                    <a href="javascript:;" class="tab">鞋靴箱包</a>
+                    <a href="javascript:;" class="tab">母婴玩具</a>
+                    <a href="javascript:;" class="tab">童装童鞋</a>
+                    <a href="javascript:;" class="tab">护肤彩妆</a>
+                    <a href="javascript:;" class="tab">内衣配件</a>
+                    <a href="javascript:;" class="tab">进口食品</a>
+                    <a href="javascript:;" class="tab">酒水饮料</a>
+                </div>
+            </div>
+        </div>
+        <div class="goods_lists">
+        </div>
+    </div>
+    <script>
+    require.config({
+        baseUrl: "./",
+        paths: {
+            "zepto": "zepto.min",
+            "fastclick": "fastclick",
+            'aqj': 'AJAXQueueRender'
+        }
+    });
+
+    var config = {
+        staticUrl: "http://192.168.116.65:3000/projects/cms",
+        publicUrl: "http://192.168.116.65:3000/projects/public"
+    }
+
+    // $(function(){
+    //  var html = $("#item_tpl").html();
+    //  var targetDom = $(".goods_lists");
+    //  $.get('http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+    //      function(data){
+    //          for (var item in data.data.mouldData) {
+    //              //console.log(data.data.mouldData[item].picture115x115URL)
+    //          }
+    //          var renderedHtml = new EJS({srcTemplateText : html, type : "<"})
+    //                          .render({mouldData:data.data.mouldData});
+    //          console.log(renderedHtml);
+    //  });
+
+
+    // });
+
+    require(['ejs', 'zepto', 'aqj'], function(ejs, $, aqj) {
+
+        aqj.start([{
+            url: 'http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+            data: {},
+            success: function(data) {
+                console.log("第1个回调："+data);
+                 var html = $("#item_tpl").html();
+             var renderedHtml = new EJS({text : html, type : "<"}).render({mouldData:data.data.mouldData});
+             //console.log(renderedHtml);
+             var targetDom = $(".goods_lists");
+             targetDom.append(renderedHtml);
+            }
+        }, {
+            url: 'http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+            data: {},
+            success: function(data) {
+                console.log("第2个回调："+data);
+                 var html = $("#item_tpl").html();
+             var renderedHtml = new EJS({text : html, type : "<"}).render({mouldData:data.data.mouldData});
+             //console.log(renderedHtml);
+             var targetDom = $(".goods_lists");
+             targetDom.append(renderedHtml);
+            }
+        }, {
+            url: 'http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+            data: {},
+            success: function(data) {
+                console.log("第3个回调："+data);
+                 var html = $("#item_tpl").html();
+             var renderedHtml = new EJS({text : html, type : "<"}).render({mouldData:data.data.mouldData});
+             //console.log(renderedHtml);
+             var targetDom = $(".goods_lists");
+             targetDom.append(renderedHtml);
+            }
+        }, {
+            url: 'http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+            data: {},
+            success: function(data) {
+                console.log("第4个回调："+data);
+                 var html = $("#item_tpl").html();
+             var renderedHtml = new EJS({text : html, type : "<"}).render({mouldData:data.data.mouldData});
+             //console.log(renderedHtml);
+             var targetDom = $(".goods_lists");
+             targetDom.append(renderedHtml);
+            }
+        }]);
+
+        // $.get('http://cms.m.yhd.com/cmsPage/getMouldData.do?pageId=245784&mouldId=5071828&provinceId=1',
+        //  function(data){
+        //            console.log(data)
+
+             // for (var item in data.data.mouldData) {
+             //     //console.log(data.data.mouldData[item].picture115x115URL)
+             // }
+             // var html = $("#item_tpl").html();
+             // var renderedHtml = new EJS({text : html, type : "<"}).render({mouldData:data.data.mouldData});
+             // //console.log(renderedHtml);
+             // var targetDom = $(".goods_lists");
+             // targetDom.html(renderedHtml);
+        // });
+
+
+
+
+
+
+
+
+    });
+    </script>
+    <script id="item_tpl" type="text/template">
+        <% mouldData.forEach(function(item){ %>
+            <div class="items">
+                <a href="javascript:" class="box_img">
+        <img class="pic" src="<%= item.grouponImageDetailUrl %>">
+        <span class="small_icon"><img src="http://tvvt.yhd.cn:9000/f00/70x70"></span>
+    </a>
+                <h3 class="box_title"><a href="javascript:"><%=item.nameSubtitle%></a></h3>
+                <div class="box_price">
+                    <div class="now_price">￥<span><%=item.price%></span><em></em>
+                    </div>
+                    <div class="ref_price">
+                        <span>参考价</span>
+                        <em>￥<%=item.price%></em>
+                    </div>
+                </div>
+                <a href="javascript:" class="box_activity">满188元减108元</a>
+                <a href="javascript:" class="box_btn add_cart">加入购物车</a>
+            </div>
+            <% }) %>
+    </script>
+</body>
+
+</html>
